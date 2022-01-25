@@ -60,13 +60,13 @@ class ProductServiceTest {
 
     @Test
     void getProductById() {
-        wireMockServer.stubFor(get(urlPathEqualTo("/products/50"))
+        wireMockServer.stubFor(get(urlPathEqualTo("/product/50"))
                 .willReturn(aResponse()
                         .withStatus(200)
                         .withHeader("Content-Type", "application/json")
-                        .withBody("{\"id\":\"50\",\"type\":\"CREDIT_CARD\",\"name\":\"28 Degrees\",\"version\":\"v1\"}")));
+                        .withBody("{\"id\":\"50\",\"type\":\"JORGE_PRODUCT\",\"name\":\"MyJorge\",\"version\":\"v2\"}")));
 
-        Product expected = new Product("50", "CREDIT_CARD", "28 Degrees", "v1");
+        Product expected = new Product("50", "JORGE_PRODUCT", "MyJorge", "v2");
 
         Product product = productService.getProduct("50");
 
