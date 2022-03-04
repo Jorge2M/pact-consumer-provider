@@ -1,0 +1,15 @@
+au/com/dius/pactworkshop/consumer/ProductServiceConfig.java
+ au.com.dius.pactworkshop.consumer.ProductServiceConfig
+au/com/dius/pactworkshop/consumer/Family.java
+ au.com.dius.pactworkshop.consumer.Family
+au/com/dius/pactworkshop/consumer/ConsoleInterface.java
+ au.com.dius.pactworkshop.consumer.ConsoleInterface
+au/com/dius/pactworkshop/consumer/FiltersProduct.java
+ au.com.dius.pactworkshop.consumer.FiltersProduct
+au/com/dius/pactworkshop/consumer/ConsumerApplication.java
+ au.com.dius.pactworkshop.consumer.ConsumerApplication
+au/com/dius/pactworkshop/consumer/Product.java
+ au.com.dius.pactworkshop.consumer.Product
+au/com/dius/pactworkshop/consumer/ProductService.java
+ au.com.dius.pactworkshop.consumer.ProductService
+ au.com.dius.pactworkshop.consumer.ProductService$1

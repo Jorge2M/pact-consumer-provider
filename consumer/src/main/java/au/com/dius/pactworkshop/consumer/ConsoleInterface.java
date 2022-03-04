@@ -35,7 +35,7 @@ public class ConsoleInterface implements CommandLineRunner {
     }
 
     private void printAllProducts() {
-        products = productService.getAllProducts();
+        products = productService.getAllProducts(new FiltersProduct("001", "ES", "shop"));
         System.out.println("\n\nProducts\n--------");
         IntStream.range(0, products.size())
                 .forEach(index -> System.out.println(String.format("%d) %s", index + 1, products.get(index).getName())));
@@ -50,7 +50,7 @@ public class ConsoleInterface implements CommandLineRunner {
     private void printProduct(int index) {
         String id = products.get(index - 1).getId();
         try {
-            Product product = productService.getProduct(id);
+            Product product = productService.getProduct(id, new FiltersProduct("001", "ES", "shop"));
 
             System.out.println("Product Details\n---------------");
             System.out.println(product);

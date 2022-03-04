@@ -26,125 +26,90 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @ExtendWith(PactConsumerTestExt.class)
 public class ProductConsumerPactTest {
 
-    @Pact(consumer = "FrontendApplication", provider = "ProductService")
-    RequestResponsePact getAllProducts(PactDslWithProvider builder) {
-        return builder.given("products exist")
-                .uponReceiving("get all products")
+	
+    @Pact(consumer = "consumer-api-prods", provider = "api-prods")
+    RequestResponsePact getProductById_productExists(PactDslWithProvider builder) {
+        return builder.given("Product with ID 17044002 exists")
+                .uponReceiving("get product with ID 17044002")
                 .method("GET")
-                .path("/products")
+                .path("/products/17044002")
+                .query("countryId=001&languageId=ES&channelId=shop")
                 .willRespondWith()
                 .status(200)
                 .headers(headers())
-                .body(newJsonArrayMinLike(2, array ->
-                        array.object(object -> {
-                            object.stringType("id", "09");
-                            object.stringType("type", "CREDIT_CARD");
-                            object.stringType("name", "Gem Visa");
-                        })
-                ).build())
-                .toPact();
-    }
-
-    @Pact(consumer = "FrontendApplication", provider = "ProductService")
-    RequestResponsePact noProductsExist(PactDslWithProvider builder) {
-        return builder.given("no products exist")
-                .uponReceiving("get all products")
-                .method("GET")
-                .path("/products")
-                .willRespondWith()
-                .status(200)
-                .headers(headers())
-                .body("[]")
-                .toPact();
-    }
-
-    @Pact(consumer = "FrontendApplication", provider = "ProductService")
-    RequestResponsePact getOneProduct(PactDslWithProvider builder) {
-        return builder.given("product with ID 10 exists")
-                .uponReceiving("get product with ID 10")
-                .method("GET")
-                .path("/product/10")
-                .willRespondWith()
-                .status(200)
-                .headers(headers())
-                .body(newJsonBody(object -> {
-                    object.stringType("id", "10");
-                    object.stringType("type", "CREDIT_CARD");
-                    object.stringType("name", "28 Degrees");
+                .body(newJsonBody((body) -> {
+                    body.stringType("id", "17044002")
+                    	.stringType("name", "Floral print bikini")
+                    	.stringType("gender", "M")
+                    	.stringType("brand", "MANGO")
+                    	.array("families", object -> {
+	                    	object.object((ao) -> {
+	                    		ao.numberType("id", 325)
+	                    		  .stringType("name", "Abrigos");
+	                    	});
+	                    	
+	                    	object.object((ao) -> {
+	                    		ao.numberType("id", 335)
+	                    		  .stringType("name", "Chaquetas");
+	                    	});
+                    	});
                 }).build())
-                .toPact();
+                .toPact();      
+    }
+    
+    private Map<String, String> headers() {
+    	Map<String, String> headers = new HashMap<>();
+    	headers.put("Content-Type", "application/json; charset=utf-8");
+    	return headers;
     }
 
-    @Pact(consumer = "FrontendApplication", provider = "ProductService")
-    RequestResponsePact productDoesNotExist(PactDslWithProvider builder) {
-        return builder.given("product with ID 11 does not exist")
-                .uponReceiving("get product with ID 11")
+    @Pact(consumer = "consumer-api-prods", provider = "api-prods")
+    RequestResponsePact getProductById_productNotExists(PactDslWithProvider builder) {
+        return builder.given("Product with ID 99044002 doesn't exists")
+                .uponReceiving("get product with ID 99044002")
                 .method("GET")
-                .path("/product/11")
+                .path("/products/99044002")
+                .query("countryId=001&languageId=ES&channelId=shop")
                 .willRespondWith()
                 .status(404)
                 .toPact();
     }
 
     @Test
-    @PactTestFor(pactMethod = "getAllProducts")
-    void getAllProducts_whenProductsExist(MockServer mockServer) {
-        Product product = new Product();
-        product.setId("09");
-        product.setType("CREDIT_CARD");
-        product.setName("Gem Visa");
-        List<Product> expected = Arrays.asList(product, product);
+    @PactTestFor(pactMethod = "getProductById_productExists")
+    void getProductById_productExists(MockServer mockServer) {
+    	
+        Product expected = new Product(
+				"17044002", "Floral print bikini", "M", "MANGO", 
+				Arrays.asList(
+						new Family(325, "Abrigos"),
+						new Family(335, "Chaquetas")));
 
         RestTemplate restTemplate = new RestTemplateBuilder()
                 .rootUri(mockServer.getUrl())
                 .build();
-        List<Product> products = new ProductService(restTemplate).getAllProducts();
-
-        assertEquals(expected, products);
-    }
-
-    @Test
-    @PactTestFor(pactMethod = "noProductsExist")
-    void getAllProducts_whenNoProductsExist(MockServer mockServer) {
-        RestTemplate restTemplate = new RestTemplateBuilder()
-                .rootUri(mockServer.getUrl())
-                .build();
-        List<Product> products = new ProductService(restTemplate).getAllProducts();
-
-        assertEquals(Collections.emptyList(), products);
-    }
-
-    @Test
-    @PactTestFor(pactMethod = "getOneProduct")
-    void getProductById_whenProductWithId10Exists(MockServer mockServer) {
-        Product expected = new Product();
-        expected.setId("10");
-        expected.setType("CREDIT_CARD");
-        expected.setName("28 Degrees");
-
-        RestTemplate restTemplate = new RestTemplateBuilder()
-                .rootUri(mockServer.getUrl())
-                .build();
-        Product product = new ProductService(restTemplate).getProduct("10");
+        
+        Product product = new ProductService(restTemplate).getProduct(
+        		"17044002",
+        		new FiltersProduct("001", "ES", "shop"));
 
         assertEquals(expected, product);
     }
 
     @Test
-    @PactTestFor(pactMethod = "productDoesNotExist")
-    void getProductById_whenProductWithId11DoesNotExist(MockServer mockServer) {
+    @PactTestFor(pactMethod = "getProductById_productNotExists")
+    void getProductById_productDoesNotExist(MockServer mockServer) {
+    	
         RestTemplate restTemplate = new RestTemplateBuilder()
                 .rootUri(mockServer.getUrl())
                 .build();
 
         HttpClientErrorException e = assertThrows(HttpClientErrorException.class,
-                () -> new ProductService(restTemplate).getProduct("11"));
+                () -> new ProductService(restTemplate).getProduct(
+                		"99044002",
+                		new FiltersProduct("001", "ES", "shop")));
+                
         assertEquals(404, e.getRawStatusCode());
     }
 
-    private Map<String, String> headers() {
-      Map<String, String> headers = new HashMap<>();
-      headers.put("Content-Type", "application/json; charset=utf-8");
-      return headers;
-    }
 }

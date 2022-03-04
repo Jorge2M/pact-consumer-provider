@@ -1,0 +1,2 @@
+au/com/dius/pactworkshop/provider/ProductPactProviderTest.java
+ au.com.dius.pactworkshop.provider.ProductPactProviderTest

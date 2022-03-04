@@ -1,0 +1,4 @@
+au/com/dius/pactworkshop/consumer/ProductServiceTest.java
+ au.com.dius.pactworkshop.consumer.ProductServiceTest
+au/com/dius/pactworkshop/consumer/ProductConsumerPactTest.java
+ au.com.dius.pactworkshop.consumer.ProductConsumerPactTest

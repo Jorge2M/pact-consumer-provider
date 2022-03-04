@@ -1,0 +1,157 @@
+{
+  "provider": {
+    "name": "api-prods"
+  },
+  "consumer": {
+    "name": "consumer-api-prods"
+  },
+  "interactions": [
+    {
+      "description": "get product with ID 17044002",
+      "request": {
+        "method": "GET",
+        "path": "/products/17044002",
+        "query": {
+          "countryId": [
+            "001"
+          ],
+          "languageId": [
+            "ES"
+          ],
+          "channelId": [
+            "shop"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "gender": "M",
+          "name": "Floral print bikini",
+          "id": "17044002",
+          "families": [
+            {
+              "name": "Abrigos",
+              "id": 325
+            },
+            {
+              "name": "Chaquetas",
+              "id": 335
+            }
+          ],
+          "brand": "MANGO"
+        },
+        "matchingRules": {
+          "body": {
+            "$.id": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.gender": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.brand": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.families[0].id": {
+              "matchers": [
+                {
+                  "match": "number"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.families[0].name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.families[1].id": {
+              "matchers": [
+                {
+                  "match": "number"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.families[1].name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "Product with ID 17044002 exists"
+        }
+      ]
+    },
+    {
+      "description": "get product with ID 99044002",
+      "request": {
+        "method": "GET",
+        "path": "/products/99044002",
+        "query": {
+          "countryId": [
+            "001"
+          ],
+          "languageId": [
+            "ES"
+          ],
+          "channelId": [
+            "shop"
+          ]
+        }
+      },
+      "response": {
+        "status": 404
+      },
+      "providerStates": [
+        {
+          "name": "Product with ID 99044002 doesn't exists"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.1.7"
+    }
+  }
+}

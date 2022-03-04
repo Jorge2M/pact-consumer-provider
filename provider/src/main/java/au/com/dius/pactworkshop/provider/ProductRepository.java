@@ -3,6 +3,7 @@ package au.com.dius.pactworkshop.provider;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,13 +22,24 @@ public class ProductRepository {
 
     public Optional<Product> getById(String id) {
         initProducts();
-
+        System.out.println("Getting product " + id);
+        Product product = PRODUCTS.get(id);
+        if (product==null) {
+        	System.out.println("Product " + id + " not obtained");
+        } else {
+        	System.out.println("Product " + id + " obtained !!!");
+        }
         return Optional.ofNullable(PRODUCTS.get(id));
     }
 
     private void initProducts() {
-        PRODUCTS.put("09", new Product("09", "CREDIT_CARD", "Gem Visa", "v1"));
-        PRODUCTS.put("10", new Product("10", "CREDIT_CARD", "28 Degrees", "v1"));
-        PRODUCTS.put("11", new Product("11", "PERSONAL_LOAN", "MyFlexiPay", "v2"));
+    	System.out.println("INITIALIZING PRODUCTS...");
+        PRODUCTS.put(
+        		"17044002",
+        		new Product(
+        				"17044002", "Floral print bikini", "M", "MANGO", 
+        				Arrays.asList(
+        						new Family(325, "Abrigos"),
+        						new Family(335, "Chaquetas"))));
     }
 }

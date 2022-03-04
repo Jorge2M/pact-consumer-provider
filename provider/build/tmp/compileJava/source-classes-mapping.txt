@@ -1,0 +1,10 @@
+au/com/dius/pactworkshop/provider/Product.java
+ au.com.dius.pactworkshop.provider.Product
+au/com/dius/pactworkshop/provider/Family.java
+ au.com.dius.pactworkshop.provider.Family
+au/com/dius/pactworkshop/provider/ProviderApplication.java
+ au.com.dius.pactworkshop.provider.ProviderApplication
+au/com/dius/pactworkshop/provider/ProductController.java
+ au.com.dius.pactworkshop.provider.ProductController
+au/com/dius/pactworkshop/provider/ProductRepository.java
+ au.com.dius.pactworkshop.provider.ProductRepository

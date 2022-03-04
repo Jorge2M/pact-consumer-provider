@@ -1,57 +1,49 @@
 package au.com.dius.pactworkshop.consumer;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Product {
 
     private String id;
-    private String type;
     private String name;
-    private String version;
+    private String gender;
+    private String brand;
+    private List<Family> families;
 
     public Product() {
     }
 
     public Product(String id,
-                   String type,
-                   String name,
-                   String version) {
+    			   String name,
+                   String gender,
+                   String brand,
+                   List<Family> families) {
         this.id = id;
-        this.type = type;
         this.name = name;
-        this.version = version;
+        this.gender = gender;
+        this.brand = brand;
+        this.families = families;
     }
 
     public String getId() {
         return id;
     }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
+    
     public String getName() {
-        return name;
+    	return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    
+    public String getGender() {
+    	return gender;
     }
-
-    public String getVersion() {
-        return version;
+    
+    public String getBrand() {
+    	return brand;
     }
-
-    public void setVersion(String version) {
-        this.version = version;
+    
+    public List<Family> getFamilies() {
+    	return families;
     }
 
     @Override
@@ -59,24 +51,27 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(id, product.id) &&
-                Objects.equals(type, product.type) &&
+        return 
+        		Objects.equals(id, product.id) &&
+                Objects.equals(gender, product.gender) &&
+                Objects.equals(brand, product.brand) &&
                 Objects.equals(name, product.name) &&
-                Objects.equals(version, product.version);
+                Objects.equals(families, product.families);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, name, version);
+        return Objects.hash(id, gender, brand, name);
     }
 
     @Override
     public String toString() {
         return "Product{" +
                 "id='" + id + '\'' +
-                ", type='" + type + '\'' +
+                ", gender='" + gender + '\'' +
+                ", brand='" + brand + '\'' +
                 ", name='" + name + '\'' +
-                ", version='" + version + '\'' +
+                ", families='" + families + '\'' +
                 '}';
     }
 }

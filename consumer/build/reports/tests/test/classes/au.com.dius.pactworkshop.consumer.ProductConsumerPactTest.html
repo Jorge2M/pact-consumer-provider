@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class au.com.dius.pactworkshop.consumer.ProductConsumerPactTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class au.com.dius.pactworkshop.consumer.ProductConsumerPactTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/au.com.dius.pactworkshop.consumer.html">au.com.dius.pactworkshop.consumer</a> &gt; ProductConsumerPactTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">2.608s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">getProductById_productDoesNotExist(MockServer)</td>
+<td class="success">2.398s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getProductById_productExists(MockServer)</td>
+<td class="success">0.210s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>11:13:44.343 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Found @PactTestFor annotation on test method
+11:13:44.352 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - providerInfo = ProviderInfo(providerName=, hostInterface=, port=, pactVersion=null, providerType=null, https=false, mockServerImplementation=Default)
+11:13:44.355 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Looking for @Pact method named 'getProductById_productNotExists' for provider 'default'
+11:13:44.357 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Invoking method 'getProductById_productNotExists' to get Pact for the test 'getProductById_productDoesNotExist'
+11:13:44.680 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Starting mock server
+11:13:44.681 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Mock server started: /127.0.0.1:27583
+11:13:46.027 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+11:13:46.037 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+11:13:46.038 [Test worker] DEBUG org.apache.http.impl.conn.BasicHttpClientConnectionManager - Get connection for route {}-&gt;http://vod-progressive.akamaized.net:27583
+11:13:46.052 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 0
+11:13:46.053 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}-&gt;http://vod-progressive.akamaized.net:27583
+11:13:46.054 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to vod-progressive.akamaized.net/127.0.0.1:27583
+11:13:46.057 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:27587&lt;-&gt;127.0.0.1:27583
+11:13:46.057 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request OPTIONS / HTTP/1.1
+11:13:46.057 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+11:13:46.058 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+11:13:46.059 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; OPTIONS / HTTP/1.1
+11:13:46.059 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; X-PACT-BOOTCHECK: true
+11:13:46.059 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Host: vod-progressive.akamaized.net:27583
+11:13:46.060 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Connection: Keep-Alive
+11:13:46.060 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_171)
+11:13:46.060 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &gt;&gt; Accept-Encoding: gzip,deflate
+11:13:46.060 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;OPTIONS / HTTP/1.1[\r][\n]&quot;
+11:13:46.060 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;X-PACT-BOOTCHECK: true[\r][\n]&quot;
+11:13:46.060 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Host: vod-progressive.akamaized.net:27583[\r][\n]&quot;
+11:13:46.060 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
+11:13:46.061 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_171)[\r][\n]&quot;
+11:13:46.061 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;Accept-Encoding: gzip,deflate[\r][\n]&quot;
+11:13:46.061 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &gt;&gt; &quot;[\r][\n]&quot;
+11:13:46.065 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;HTTP/1.1 200 OK[\r][\n]&quot;
+11:13:46.065 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;Date: Fri, 04 Mar 2022 10:13:46 GMT[\r][\n]&quot;
+11:13:46.065 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;Transfer-encoding: chunked[\r][\n]&quot;
+11:13:46.065 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;X-pact-bootcheck: true[\r][\n]&quot;
+11:13:46.065 [Test worker] DEBUG org.apache.http.wire - http-outgoing-0 &lt;&lt; &quot;[\r][\n]&quot;
+11:13:46.069 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; HTTP/1.1 200 OK
+11:13:46.069 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; Date: Fri, 04 Mar 2022 10:13:46 GMT
+11:13:46.069 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; Transfer-encoding: chunked
+11:13:46.069 [Test worker] DEBUG org.apache.http.headers - http-outgoing-0 &lt;&lt; X-pact-bootcheck: true
+11:13:46.074 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+11:13:46.077 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+11:13:46.078 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+11:13:46.078 [Test worker] DEBUG org.apache.http.impl.conn.BasicHttpClientConnectionManager - Releasing connection [Not bound]
+11:13:46.434 [Test worker] WARN org.springframework.http.converter.json.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add &quot;com.fasterxml.jackson.module:jackson-module-kotlin&quot; to the classpath
+11:13:46.503 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://vod-progressive.akamaized.net:27583/products/99044002?countryId=001&amp;languageId=ES&amp;channelId=shop
+11:13:46.570 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+11:13:46.575 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+11:13:46.575 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+11:13:46.576 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}-&gt;http://vod-progressive.akamaized.net:27583][total available: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+11:13:46.578 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}-&gt;http://vod-progressive.akamaized.net:27583][total available: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+11:13:46.579 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}-&gt;http://vod-progressive.akamaized.net:27583
+11:13:46.579 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to vod-progressive.akamaized.net/127.0.0.1:27583
+11:13:46.580 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:27591&lt;-&gt;127.0.0.1:27583
+11:13:46.580 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /products/99044002?countryId=001&amp;languageId=ES&amp;channelId=shop HTTP/1.1
+11:13:46.580 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+11:13:46.580 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+11:13:46.580 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; GET /products/99044002?countryId=001&amp;languageId=ES&amp;channelId=shop HTTP/1.1
+11:13:46.580 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; Accept: application/json, application/*+json
+11:13:46.580 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; Host: vod-progressive.akamaized.net:27583
+11:13:46.580 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; Connection: Keep-Alive
+11:13:46.580 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_171)
+11:13:46.580 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &gt;&gt; Accept-Encoding: gzip,deflate
+11:13:46.580 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;GET /products/99044002?countryId=001&amp;languageId=ES&amp;channelId=shop HTTP/1.1[\r][\n]&quot;
+11:13:46.581 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;Accept: application/json, application/*+json[\r][\n]&quot;
+11:13:46.581 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;Host: vod-progressive.akamaized.net:27583[\r][\n]&quot;
+11:13:46.581 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
+11:13:46.581 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_171)[\r][\n]&quot;
+11:13:46.581 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;Accept-Encoding: gzip,deflate[\r][\n]&quot;
+11:13:46.581 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &gt;&gt; &quot;[\r][\n]&quot;
+11:13:46.585 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Received request: 	method: GET
+	path: /products/99044002
+	query: {countryId=[001], languageId=[ES], channelId=[shop]}
+	headers: {Accept-encoding=[gzip,deflate], Accept=[application/json, application/*+json], Connection=[Keep-Alive], Host=[vod-progressive.akamaized.net:27583], User-agent=[Apache-HttpClient/4.5.12 (Java/1.8.0_171)]}
+	matchers: MatchingRules(rules={})
+	generators: Generators(categories={})
+	body: EMPTY
+11:13:46.585 [Thread-5] DEBUG au.com.dius.pact.core.matchers.RequestMatching - comparing to expected request: 
+	method: GET
+	path: /products/99044002
+	query: {countryId=[001], languageId=[ES], channelId=[shop]}
+	headers: {}
+	matchers: MatchingRules(rules={})
+	generators: Generators(categories={})
+	body: MISSING
+11:13:46.593 [Thread-5] DEBUG au.com.dius.pact.core.matchers.QueryMatcher - compareQueryParameterValues: No matcher defined for query parameter 'countryId', using equality
+11:13:46.594 [Thread-5] DEBUG au.com.dius.pact.core.matchers.QueryMatcher - compareQueryParameterValues: No matcher defined for query parameter 'languageId', using equality
+11:13:46.594 [Thread-5] DEBUG au.com.dius.pact.core.matchers.QueryMatcher - compareQueryParameterValues: No matcher defined for query parameter 'channelId', using equality
+11:13:46.595 [Thread-5] DEBUG au.com.dius.pact.core.matchers.Matching - No matcher for null, using equality
+11:13:46.596 [Thread-5] DEBUG au.com.dius.pact.core.matchers.RequestMatching - Request mismatch: RequestMatchResult(method=null, path=null, query=[QueryMatchResult(key=countryId, result=[]), QueryMatchResult(key=languageId, result=[]), QueryMatchResult(key=channelId, result=[])], cookie=null, headers=[], body=BodyMatchResult(typeMismatch=null, bodyResults=[]))
+11:13:46.600 [Thread-5] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Generating response: 	status: 404
+	headers: {}
+	matchers: MatchingRules(rules={})
+	generators: Generators(categories={})
+	body: MISSING
+11:13:46.600 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;HTTP/1.1 404 Not Found[\r][\n]&quot;
+11:13:46.600 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;Date: Fri, 04 Mar 2022 10:13:46 GMT[\r][\n]&quot;
+11:13:46.600 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;Transfer-encoding: chunked[\r][\n]&quot;
+11:13:46.600 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;[\r][\n]&quot;
+11:13:46.600 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &lt;&lt; HTTP/1.1 404 Not Found
+11:13:46.600 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &lt;&lt; Date: Fri, 04 Mar 2022 10:13:46 GMT
+11:13:46.600 [Test worker] DEBUG org.apache.http.headers - http-outgoing-1 &lt;&lt; Transfer-encoding: chunked
+11:13:46.600 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+11:13:46.602 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
+11:13:46.605 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;0[\r][\n]&quot;
+11:13:46.605 [Test worker] DEBUG org.apache.http.wire - http-outgoing-1 &lt;&lt; &quot;[\r][\n]&quot;
+11:13:46.605 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {}-&gt;http://vod-progressive.akamaized.net:27583] can be kept alive indefinitely
+11:13:46.605 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: set socket timeout to 0
+11:13:46.605 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}-&gt;http://vod-progressive.akamaized.net:27583][total available: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+11:13:46.719 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Mock server shutdown
+11:13:46.735 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Found @PactTestFor annotation on test method
+11:13:46.735 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - providerInfo = ProviderInfo(providerName=, hostInterface=, port=, pactVersion=null, providerType=null, https=false, mockServerImplementation=Default)
+11:13:46.735 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Looking for @Pact method named 'getProductById_productExists' for provider 'default'
+11:13:46.736 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Invoking method 'getProductById_productExists' to get Pact for the test 'getProductById_productExists'
+11:13:46.763 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Starting mock server
+11:13:46.764 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Mock server started: /127.0.0.1:27594
+11:13:46.767 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+11:13:46.767 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+11:13:46.767 [Test worker] DEBUG org.apache.http.impl.conn.BasicHttpClientConnectionManager - Get connection for route {}-&gt;http://vod-progressive.akamaized.net:27594
+11:13:46.767 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: set socket timeout to 0
+11:13:46.767 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}-&gt;http://vod-progressive.akamaized.net:27594
+11:13:46.767 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to vod-progressive.akamaized.net/127.0.0.1:27594
+11:13:46.768 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:27597&lt;-&gt;127.0.0.1:27594
+11:13:46.768 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request OPTIONS / HTTP/1.1
+11:13:46.768 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+11:13:46.769 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+11:13:46.769 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &gt;&gt; OPTIONS / HTTP/1.1
+11:13:46.769 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &gt;&gt; X-PACT-BOOTCHECK: true
+11:13:46.769 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &gt;&gt; Host: vod-progressive.akamaized.net:27594
+11:13:46.769 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &gt;&gt; Connection: Keep-Alive
+11:13:46.769 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &gt;&gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_171)
+11:13:46.769 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &gt;&gt; Accept-Encoding: gzip,deflate
+11:13:46.769 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &gt;&gt; &quot;OPTIONS / HTTP/1.1[\r][\n]&quot;
+11:13:46.769 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &gt;&gt; &quot;X-PACT-BOOTCHECK: true[\r][\n]&quot;
+11:13:46.769 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &gt;&gt; &quot;Host: vod-progressive.akamaized.net:27594[\r][\n]&quot;
+11:13:46.769 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
+11:13:46.769 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_171)[\r][\n]&quot;
+11:13:46.769 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &gt;&gt; &quot;Accept-Encoding: gzip,deflate[\r][\n]&quot;
+11:13:46.769 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &gt;&gt; &quot;[\r][\n]&quot;
+11:13:46.771 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &lt;&lt; &quot;HTTP/1.1 200 OK[\r][\n]&quot;
+11:13:46.771 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &lt;&lt; &quot;Date: Fri, 04 Mar 2022 10:13:46 GMT[\r][\n]&quot;
+11:13:46.771 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &lt;&lt; &quot;Transfer-encoding: chunked[\r][\n]&quot;
+11:13:46.771 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &lt;&lt; &quot;X-pact-bootcheck: true[\r][\n]&quot;
+11:13:46.771 [Test worker] DEBUG org.apache.http.wire - http-outgoing-2 &lt;&lt; &quot;[\r][\n]&quot;
+11:13:46.771 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &lt;&lt; HTTP/1.1 200 OK
+11:13:46.771 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &lt;&lt; Date: Fri, 04 Mar 2022 10:13:46 GMT
+11:13:46.771 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &lt;&lt; Transfer-encoding: chunked
+11:13:46.771 [Test worker] DEBUG org.apache.http.headers - http-outgoing-2 &lt;&lt; X-pact-bootcheck: true
+11:13:46.771 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+11:13:46.772 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-2: Close connection
+11:13:46.772 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection discarded
+11:13:46.772 [Test worker] DEBUG org.apache.http.impl.conn.BasicHttpClientConnectionManager - Releasing connection [Not bound]
+11:13:46.777 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://vod-progressive.akamaized.net:27594/products/17044002?countryId=001&amp;languageId=ES&amp;channelId=shop
+11:13:46.778 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+11:13:46.779 [Test worker] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: default
+11:13:46.779 [Test worker] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+11:13:46.779 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}-&gt;http://vod-progressive.akamaized.net:27594][total available: 0; route allocated: 0 of 5; total allocated: 0 of 10]
+11:13:46.779 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {}-&gt;http://vod-progressive.akamaized.net:27594][total available: 0; route allocated: 1 of 5; total allocated: 1 of 10]
+11:13:46.779 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {}-&gt;http://vod-progressive.akamaized.net:27594
+11:13:46.779 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to vod-progressive.akamaized.net/127.0.0.1:27594
+11:13:46.780 [Test worker] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 127.0.0.1:27598&lt;-&gt;127.0.0.1:27594
+11:13:46.780 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /products/17044002?countryId=001&amp;languageId=ES&amp;channelId=shop HTTP/1.1
+11:13:46.780 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+11:13:46.780 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+11:13:46.780 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &gt;&gt; GET /products/17044002?countryId=001&amp;languageId=ES&amp;channelId=shop HTTP/1.1
+11:13:46.780 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &gt;&gt; Accept: application/json, application/*+json
+11:13:46.780 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &gt;&gt; Host: vod-progressive.akamaized.net:27594
+11:13:46.780 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &gt;&gt; Connection: Keep-Alive
+11:13:46.780 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &gt;&gt; User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_171)
+11:13:46.780 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &gt;&gt; Accept-Encoding: gzip,deflate
+11:13:46.780 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &gt;&gt; &quot;GET /products/17044002?countryId=001&amp;languageId=ES&amp;channelId=shop HTTP/1.1[\r][\n]&quot;
+11:13:46.780 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &gt;&gt; &quot;Accept: application/json, application/*+json[\r][\n]&quot;
+11:13:46.780 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &gt;&gt; &quot;Host: vod-progressive.akamaized.net:27594[\r][\n]&quot;
+11:13:46.780 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &gt;&gt; &quot;Connection: Keep-Alive[\r][\n]&quot;
+11:13:46.780 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &gt;&gt; &quot;User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_171)[\r][\n]&quot;
+11:13:46.780 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &gt;&gt; &quot;Accept-Encoding: gzip,deflate[\r][\n]&quot;
+11:13:46.780 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &gt;&gt; &quot;[\r][\n]&quot;
+11:13:46.781 [Thread-7] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Received request: 	method: GET
+	path: /products/17044002
+	query: {countryId=[001], languageId=[ES], channelId=[shop]}
+	headers: {Accept-encoding=[gzip,deflate], Accept=[application/json, application/*+json], Connection=[Keep-Alive], Host=[vod-progressive.akamaized.net:27594], User-agent=[Apache-HttpClient/4.5.12 (Java/1.8.0_171)]}
+	matchers: MatchingRules(rules={})
+	generators: Generators(categories={})
+	body: EMPTY
+11:13:46.781 [Thread-7] DEBUG au.com.dius.pact.core.matchers.RequestMatching - comparing to expected request: 
+	method: GET
+	path: /products/17044002
+	query: {countryId=[001], languageId=[ES], channelId=[shop]}
+	headers: {}
+	matchers: MatchingRules(rules={})
+	generators: Generators(categories={})
+	body: MISSING
+11:13:46.781 [Thread-7] DEBUG au.com.dius.pact.core.matchers.QueryMatcher - compareQueryParameterValues: No matcher defined for query parameter 'countryId', using equality
+11:13:46.781 [Thread-7] DEBUG au.com.dius.pact.core.matchers.QueryMatcher - compareQueryParameterValues: No matcher defined for query parameter 'languageId', using equality
+11:13:46.781 [Thread-7] DEBUG au.com.dius.pact.core.matchers.QueryMatcher - compareQueryParameterValues: No matcher defined for query parameter 'channelId', using equality
+11:13:46.781 [Thread-7] DEBUG au.com.dius.pact.core.matchers.Matching - No matcher for null, using equality
+11:13:46.782 [Thread-7] DEBUG au.com.dius.pact.core.matchers.RequestMatching - Request mismatch: RequestMatchResult(method=null, path=null, query=[QueryMatchResult(key=countryId, result=[]), QueryMatchResult(key=languageId, result=[]), QueryMatchResult(key=channelId, result=[])], cookie=null, headers=[], body=BodyMatchResult(typeMismatch=null, bodyResults=[]))
+11:13:46.806 [Thread-7] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Generating response: 	status: 200
+	headers: {Content-Type=[application/json; charset=utf-8]}
+	matchers: MatchingRules(rules={body=Category(name=body, matchingRules={$.id=MatchingRuleGroup(rules=[au.com.dius.pact.core.model.matchingrules.TypeMatcher@5e2a5996], ruleLogic=AND), $.name=MatchingRuleGroup(rules=[au.com.dius.pact.core.model.matchingrules.TypeMatcher@5e2a5996], ruleLogic=AND), $.gender=MatchingRuleGroup(rules=[au.com.dius.pact.core.model.matchingrules.TypeMatcher@5e2a5996], ruleLogic=AND), $.brand=MatchingRuleGroup(rules=[au.com.dius.pact.core.model.matchingrules.TypeMatcher@5e2a5996], ruleLogic=AND), $.families[0].id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND), $.families[0].name=MatchingRuleGroup(rules=[au.com.dius.pact.core.model.matchingrules.TypeMatcher@5e2a5996], ruleLogic=AND), $.families[1].id=MatchingRuleGroup(rules=[NumberTypeMatcher(numberType=NUMBER)], ruleLogic=AND), $.families[1].name=MatchingRuleGroup(rules=[au.com.dius.pact.core.model.matchingrules.TypeMatcher@5e2a5996], ruleLogic=AND)})})
+	generators: Generators(categories={})
+	body: PRESENT({&quot;gender&quot;:&quot;M&quot;,&quot;name&quot;:&quot;Floral print bikini&quot;,&quot;id&quot;:&quot;17044002&quot;,&quot;families&quot;:[{&quot;name&quot;:&quot;Abrigos&quot;,&quot;id&quot;:325},{&quot;name&quot;:&quot;Chaquetas&quot;,&quot;id&quot;:335}],&quot;brand&quot;:&quot;MANGO&quot;})
+11:13:46.807 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &lt;&lt; &quot;HTTP/1.1 200 OK[\r][\n]&quot;
+11:13:46.807 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &lt;&lt; &quot;Date: Fri, 04 Mar 2022 10:13:46 GMT[\r][\n]&quot;
+11:13:46.807 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &lt;&lt; &quot;Content-length: 146[\r][\n]&quot;
+11:13:46.807 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &lt;&lt; &quot;Content-Type: application/json; charset=utf-8[\r][\n]&quot;
+11:13:46.807 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &lt;&lt; &quot;[\r][\n]&quot;
+11:13:46.807 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &lt;&lt; HTTP/1.1 200 OK
+11:13:46.807 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &lt;&lt; Date: Fri, 04 Mar 2022 10:13:46 GMT
+11:13:46.807 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &lt;&lt; Content-length: 146
+11:13:46.807 [Test worker] DEBUG org.apache.http.headers - http-outgoing-3 &lt;&lt; Content-Type: application/json; charset=utf-8
+11:13:46.808 [Test worker] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+11:13:46.808 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+11:13:46.808 [Test worker] DEBUG org.apache.http.wire - http-outgoing-3 &lt;&lt; &quot;{&quot;gender&quot;:&quot;M&quot;,&quot;name&quot;:&quot;Floral print bikini&quot;,&quot;id&quot;:&quot;17044002&quot;,&quot;families&quot;:[{&quot;name&quot;:&quot;Abrigos&quot;,&quot;id&quot;:325},{&quot;name&quot;:&quot;Chaquetas&quot;,&quot;id&quot;:335}],&quot;brand&quot;:&quot;MANGO&quot;}&quot;
+11:13:46.811 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [au.com.dius.pactworkshop.consumer.Product]
+11:13:46.823 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 1][route: {}-&gt;http://vod-progressive.akamaized.net:27594] can be kept alive indefinitely
+11:13:46.823 [Test worker] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: set socket timeout to 0
+11:13:46.823 [Test worker] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {}-&gt;http://vod-progressive.akamaized.net:27594][total available: 1; route allocated: 1 of 5; total allocated: 1 of 10]
+11:13:46.941 [Test worker] DEBUG au.com.dius.pact.consumer.BaseJdkMockServer - Mock server shutdown
+11:13:46.948 [Test worker] DEBUG au.com.dius.pact.consumer.junit5.PactConsumerTestExt - Writing pact consumer-api-prods -&gt; api-prods to file build\pacts\consumer-api-prods-api-prods.json
+11:13:47.027 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+11:13:47.028 [Finalizer] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: Close connection
+11:13:47.028 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.6.1</a> at 04-mar-2022 11:13:48</p>
+</div>
+</div>
+</body>
+</html>

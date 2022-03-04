@@ -5,7 +5,9 @@ import au.com.dius.pact.provider.junit5.PactVerificationContext;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
 import au.com.dius.pact.provider.junitsupport.Provider;
 import au.com.dius.pact.provider.junitsupport.State;
+import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
 import au.com.dius.pact.provider.junitsupport.loader.PactFolder;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,13 +17,13 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Optional;
 
 import static org.mockito.Mockito.when;
 
-@Provider("ProductService")
-@PactFolder("pacts")
+@Provider("api-prods")
+//@PactFolder("pacts")
+@PactBroker(host = "pact-broker.mangodev.net", port = "80")
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ProductPactProviderTest {
@@ -29,8 +31,8 @@ public class ProductPactProviderTest {
     @LocalServerPort
     int port;
 
-    @MockBean
-    private ProductRepository productRepository;
+//    @MockBean
+//    private ProductRepository productRepository;
 
     @BeforeEach
     void setUp(PactVerificationContext context) {
@@ -43,23 +45,18 @@ public class ProductPactProviderTest {
         context.verifyInteraction();
     }
 
-    @State("products exist")
-    void toProductsExistState() {
-        when(productRepository.fetchAll()).thenReturn(
-                Arrays.asList(new Product("09", "CREDIT_CARD", "Gem Visa", "v1"),
-                        new Product("10", "CREDIT_CARD", "28 Degrees", "v1")));
-    }
-
-    @State({
-            "no products exist",
-            "product with ID 11 does not exist"
-    })
+    @State("Product with ID 99044002 doesn't exists")
     void toNoProductsExistState() {
-        when(productRepository.fetchAll()).thenReturn(Collections.emptyList());
+//        when(productRepository.getById("99044002")).thenReturn(Optional.empty());
     }
 
-    @State("product with ID 10 exists")
+    @State("Product with ID 17044002 exists")
     void toProductWithIdTenExistsState() {
-        when(productRepository.getById("10")).thenReturn(Optional.of(new Product("10", "CREDIT_CARD", "28 Degrees", "v1")));
+//        when(productRepository.getById("17044002")).thenReturn(Optional.of(
+//    		new Product(
+//				"17044002", "Floral print bikini", "M", "MANGO", 
+//				Arrays.asList(
+//					new Family(325, "Abrigos"),
+//					new Family(335, "Chaquetas")))));
     }
 }

@@ -18,14 +18,14 @@ public class ProductService {
         this.restTemplate = restTemplate;
     }
 
-    public List<Product> getAllProducts() {
-        return restTemplate.exchange("/products",
+    public List<Product> getAllProducts(FiltersProduct filter) {
+        return restTemplate.exchange("/products?" + filter.getQueryParams(),
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<List<Product>>(){}).getBody();
     }
 
-    public Product getProduct(String id) {
-        return restTemplate.getForEntity("/product/{id}", Product.class, id).getBody();
+    public Product getProduct(String id, FiltersProduct filter) {
+        return restTemplate.getForEntity("/products/{id}?" + filter.getQueryParams(), Product.class, id).getBody();
     }
 }

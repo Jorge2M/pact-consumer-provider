@@ -1,6 +1,8 @@
 package au.com.dius.pactworkshop.consumer;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.client.WireMock;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,36 +41,65 @@ class ProductServiceTest {
         wireMockServer.stop();
     }
 
+    private final static String PRODUCT_17044002 = 
+    		"{" + 
+        		"\"id\":\"17044002\"," + 
+        		"\"name\":\"Floral print bikini\"," + 
+        		"\"gender\":\"M\"," + 
+        		"\"brand\":\"MANGO\"," +
+        	    "\"families\": [" +
+        	    	"{" + 
+        	        	"\"id\": 325," +
+        	        	"\"name\": \"Abrigos\"" +
+        	        "}," +
+        	        "{" +
+        	        	"\"id\": 335," +
+        	        	"\"name\": \"Chaquetas\"" +
+        	        "}" +
+        	    "]" +                      		
+            "}";
+    
     @Test
     void getAllProducts() {
         wireMockServer.stubFor(get(urlPathEqualTo("/products"))
+        		.withQueryParam("countryId", WireMock.equalTo("001"))
+        		.withQueryParam("languageId", WireMock.equalTo("ES"))
+        		.withQueryParam("channelId", WireMock.equalTo("shop"))
                 .willReturn(aResponse()
                         .withStatus(200)
                         .withHeader("Content-Type", "application/json")
-                        .withBody("[" +
-                                "{\"id\":\"9\",\"type\":\"CREDIT_CARD\",\"name\":\"GEM Visa\",\"version\":\"v2\"},"+
-                                "{\"id\":\"10\",\"type\":\"CREDIT_CARD\",\"name\":\"28 Degrees\",\"version\":\"v1\"}"+
-                                "]")));
+                        .withBody("[" + PRODUCT_17044002 + "]")));
 
-        List<Product> expected = Arrays.asList(new Product("9", "CREDIT_CARD", "GEM Visa", "v2"),
-                new Product("10", "CREDIT_CARD", "28 Degrees", "v1"));
+        List<Product> expected = Arrays.asList(
+        		new Product(
+        				"17044002", "Floral print bikini", "M", "MANGO", 
+        				Arrays.asList(
+        						new Family(325, "Abrigos"),
+        						new Family(335, "Chaquetas"))));
 
-        List<Product> products = productService.getAllProducts();
+        List<Product> products = productService.getAllProducts(new FiltersProduct("001", "ES", "shop"));
 
         assertEquals(expected, products);
     }
 
     @Test
     void getProductById() {
-        wireMockServer.stubFor(get(urlPathEqualTo("/product/50"))
+        wireMockServer.stubFor(get(urlPathEqualTo("/products/17044002"))
+        		.withQueryParam("countryId", WireMock.equalTo("001"))
+        		.withQueryParam("languageId", WireMock.equalTo("ES"))
+        		.withQueryParam("channelId", WireMock.equalTo("shop"))
                 .willReturn(aResponse()
                         .withStatus(200)
                         .withHeader("Content-Type", "application/json")
-                        .withBody("{\"id\":\"50\",\"type\":\"JORGE_PRODUCT\",\"name\":\"MyJorge\",\"version\":\"v2\"}")));
+                        .withBody(PRODUCT_17044002)));
 
-        Product expected = new Product("50", "JORGE_PRODUCT", "MyJorge", "v2");
+        Product expected = new Product(
+				"17044002", "Floral print bikini", "M", "MANGO", 
+				Arrays.asList(
+						new Family(325, "Abrigos"),
+						new Family(335, "Chaquetas")));
 
-        Product product = productService.getProduct("50");
+        Product product = productService.getProduct("17044002", new FiltersProduct("001", "ES", "shop"));
 
         assertEquals(expected, product);
     }
